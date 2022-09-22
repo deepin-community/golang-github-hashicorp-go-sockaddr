@@ -1,0 +1,5 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/golang-github-hashicorp-go-sockaddr-\$1\.tar\.gz/,\
+uversionmangle=s/(\d)[_\.\-\+]?(RC|rc|pre|dev|beta|alpha)[.]?(\d*)$/\$1~\$2\$3/,\
+dversionmangle=s{[~+](?:ds|dfsg)\d*$}{} \
+  https://github.com/hashicorp/go-sockaddr/tags .*/v?(\d\S*)\.tar\.gz

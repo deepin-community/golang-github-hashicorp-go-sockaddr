@@ -1,0 +1,31 @@
+Source: golang-github-hashicorp-go-sockaddr
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Martín Ferrari <tincho@debian.org>,
+Section: devel
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper (>= 11~),
+               dh-golang,
+               golang-any,
+               golang-github-hashicorp-errwrap-dev,
+               iproute2,
+Standards-Version: 4.1.5
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-hashicorp-go-sockaddr
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-hashicorp-go-sockaddr.git
+Homepage: https://github.com/hashicorp/go-sockaddr
+XS-Go-Import-Path: github.com/hashicorp/go-sockaddr
+
+Package: golang-github-hashicorp-go-sockaddr-dev
+Architecture: all
+Depends: golang-github-hashicorp-errwrap-dev,
+         iproute2,
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: IP address/UNIX socket convenience functions for Go
+ go-sockaddr is a convenience library that makes doing the right thing with IP
+ addresses easy.  go-sockaddr is loosely modeled after the UNIX sockaddr_t and
+ creates a union of the family of sockaddr_t types.
+ .
+ The primary intent of the library was to make it possible
+ to define heuristics for selecting the correct IP addresses
+ when a configuration is evaluated at runtime.

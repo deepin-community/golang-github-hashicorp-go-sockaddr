@@ -1,0 +1,20 @@
+Description: A silly test that only works on computers with a specific network
+ configuration.
+--- a/ifaddrs_test.go
++++ b/ifaddrs_test.go
+@@ -1725,6 +1725,7 @@
+ 				},
+ 			},
+ 		},
++/*
+ 		{
+ 			// NOTE(seanc@): This test requires macOS, or at least a computer where
+ 			// en0 has the default route.
+@@ -1775,6 +1776,7 @@
+ 				},
+ 			},
+ 		},
++*/
+ 		{
+ 			name:    "sort name",
+ 			sortStr: "name",

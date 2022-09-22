@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+export DH_GOLANG_EXCLUDES := cmd/sockaddr
+# Some of the tests rely on having certain network configuration present.
+# Tell them not to do that.
+export SOCKADDR_HAVE_PRIVATE_IP := 0
+export SOCKADDR_HAVE_PUBLIC_IP := 0
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+# The template tests depend on the build machine's network stack matching the
+# author's, and no amount of patching would make them reliable enough.
+override_dh_auto_test: DH_GOLANG_EXCLUDES += template
+override_dh_auto_test:
+	dh_auto_test
